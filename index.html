@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Școala Gimnazială „Mihai Eminescu”</title>
+<title>Școala Gimnazială Frasinet</title>
 <style>
 :root{--bg:#fffaf3;--card:#fff;--text:#1f2340;--muted:#60658a;--p:#5b4bff;--a:#ff6b6b;--y:#ffc93c;--g:#22c39b;--line:#ece6f5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14152b;--card:#1e2040;--text:#f2f1ff;--muted:#a9acd1;--line:#2d3060}}
@@ -27,7 +27,7 @@ h2+p{color:var(--muted);margin:0 0 24px}
 .btn.o{background:transparent;color:#fff;border:2px solid #fff}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;margin-top:34px}
 .stats div{background:rgba(255,255,255,.18);border-radius:18px;padding:14px}
-.stats b{display:block;font-size:2rem}
+.stats b{display:block;font-size:2rem}.stats b.sm{font-size:1.2rem;line-height:2.4rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
 .card{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:20px}
 .card h3{margin:6px 0}
@@ -52,26 +52,26 @@ footer{text-align:center;padding:30px 20px;color:var(--muted);border-top:2px sol
 </head>
 <body>
 <header>
-<div class="logo">🎒 Școala „M. Eminescu”</div>
+<div class="logo">🎒 Școala Gimnazială Frasinet</div>
 <nav>
 <a href="#despre">Despre</a><a href="#program">Program</a><a href="#profesori">Profesori</a><a href="#activitati">Activități</a><a href="#evenimente">Evenimente</a><a href="#contact">Contact</a>
 </nav>
 </header>
 
 <div class="hero">
-<h1>Bine ai venit la Școala Gimnazială „Mihai Eminescu”!</h1>
+<h1>Bine ai venit la Școala Gimnazială Frasinet!</h1>
 <p>Un loc unde fiecare elev învață, descoperă și crește, împreună cu colegi și profesori care îl susțin.</p>
 <a class="btn" href="#program">Vezi programul</a><a class="btn o" href="#contact">Contactează-ne</a>
 <div class="stats" style="max-width:700px;margin-inline:auto">
-<div><b>450+</b>elevi</div><div><b>35</b>profesori</div><div><b>12</b>cluburi</div><div><b>40</b>ani de școală</div>
+<div><b class="sm">în lucru</b>elevi</div><div><b class="sm">în lucru</b>profesori</div><div><b class="sm">în lucru</b>cluburi</div><div><b>1959</b>funcționăm din</div>
 </div>
 </div>
 
 <section id="despre">
 <h2>Despre școală</h2>
-<p>Clasele V–VIII, într-o atmosferă prietenoasă și modernă.</p>
+<p>De la grupa mică până la clasa a VIII-a.</p>
 <div class="two">
-<div class="card"><p style="color:var(--text)">Școala noastră pregătește elevii pentru viață și pentru liceu, cu accent pe înțelegere, nu pe memorare. Avem săli de clasă dotate cu tablete interactive, laborator de informatică, bibliotecă, teren de sport și o curte plină de verdeață.</p></div>
+<div class="card"><p style="color:var(--text)">Școala noastră are clase de la grupa mică până la clasa a VIII-a. Pregătim elevii pentru viață și pentru liceu, cu accent pe înțelegere, nu pe memorare. Avem săli de clasă dotate cu table inteligente, teren de sport și o curte plină de verdeață.</p></div>
 <div class="grid">
 <div class="card"><div class="ico">🎯</div><h3>Misiune</h3><p>Educație de calitate pentru fiecare copil.</p></div>
 <div class="card"><div class="ico">💡</div><h3>Valori</h3><p>Respect, curiozitate, colaborare.</p></div>
@@ -80,33 +80,23 @@ footer{text-align:center;padding:30px 20px;color:var(--muted);border-top:2px sol
 
 <section id="program">
 <h2>Program și orar</h2>
-<p>Alege clasa ca să vezi orarul (exemplu, se poate modifica).</p>
-<div class="two">
-<div>
-<h3>🔔 Programul orelor</h3>
-<div class="wrap"><table>
-<tr><th>Ora</th><th>Interval</th></tr>
-<tr><td>1</td><td>08:00 – 08:50</td></tr><tr><td>2</td><td>09:00 – 09:50</td></tr>
-<tr><td>3</td><td>10:00 – 10:50</td></tr><tr><td>4</td><td>11:00 – 11:50</td></tr>
-<tr><td>5</td><td>12:00 – 12:50</td></tr><tr><td>6</td><td>13:00 – 13:50</td></tr>
-</table></div>
-</div>
-<div>
-<h3>📅 Orar clasă</h3>
-<div class="tabs"><select id="cls"><option>V A</option><option>VI B</option><option>VII A</option><option>VIII C</option></select></div>
+<p>Alege grupa sau clasa ca să vezi orarul.</p>
+<div class="tabs"><select id="cls">
+<option>Grupa mică</option><option>Grupa mijlocie</option><option>Grupa mare</option><option>Clasa pregătitoare</option>
+<option>Clasa I</option><option>Clasa a II-a</option><option>Clasa a III-a</option><option>Clasa a IV-a</option>
+<option>Clasa a V-a</option><option>Clasa a VI-a</option><option>Clasa a VII-a</option><option>Clasa a VIII-a</option>
+</select></div>
 <div class="wrap"><table id="orar"></table></div>
-</div>
-</div>
 </section>
 
 <section id="profesori">
 <h2>Profesorii noștri</h2>
 <p>Oameni dedicați, aproape de elevi.</p>
 <div class="grid">
-<div class="card"><div class="av" style="background:var(--p)">I</div><h3>Prof. Ioana Popescu</h3><p>Limba și literatura română</p></div>
-<div class="card"><div class="av" style="background:var(--a)">M</div><h3>Prof. Mihai Dumitru</h3><p>Matematică</p></div>
-<div class="card"><div class="av" style="background:var(--g)">E</div><h3>Prof. Elena Stan</h3><p>Limba engleză</p></div>
-<div class="card"><div class="av" style="background:#e08a00">A</div><h3>Prof. Andrei Ionescu</h3><p>Informatică și TIC</p></div>
+<div class="card"><div class="av" style="background:var(--p)">G</div><h3>Gruia Bogdan</h3><p>atât s-a putut</p></div>
+<div class="card"><div class="av" style="background:var(--a)">G</div><h3>Gruia Bogdan</h3><p>atât s-a putut</p></div>
+<div class="card"><div class="av" style="background:var(--g)">G</div><h3>Gruia Bogdan</h3><p>atât s-a putut</p></div>
+<div class="card"><div class="av" style="background:#e08a00">G</div><h3>Gruia Bogdan</h3><p>atât s-a putut</p></div>
 </div>
 </section>
 
@@ -114,22 +104,19 @@ footer{text-align:center;padding:30px 20px;color:var(--muted);border-top:2px sol
 <h2>Activități și cluburi</h2>
 <p>După ore, școala nu se oprește.</p>
 <div class="grid">
-<div class="card"><div class="ico">⚽</div><h3>Sport</h3><p>Fotbal, handbal, volei.</p></div>
-<div class="card"><div class="ico">🎨</div><h3>Artă</h3><p>Desen, pictură, teatru.</p></div>
-<div class="card"><div class="ico">🤖</div><h3>Robotică</h3><p>Programare și proiecte.</p></div>
-<div class="card"><div class="ico">🎵</div><h3>Muzică</h3><p>Cor și orchestră.</p></div>
-<div class="card"><div class="ico">📚</div><h3>Cititori</h3><p>Club de carte și lectură.</p></div>
-<div class="card"><div class="ico">🌱</div><h3>Eco</h3><p>Proiecte pentru mediu.</p></div>
+<div class="card"><h3>n-avem încă</h3></div>
+<div class="card"><h3>n-avem încă</h3></div>
+<div class="card"><h3>n-avem încă</h3></div>
+<div class="card"><h3>n-avem încă</h3></div>
+<div class="card"><h3>n-avem încă</h3></div>
+<div class="card"><h3>n-avem încă</h3></div>
 </div>
 </section>
 
 <section id="evenimente">
 <h2>Evenimente și noutăți</h2>
 <p>Ce urmează în școala noastră.</p>
-<div class="ev"><div class="date">15<small>OCT</small></div><div><b>Ziua porților deschise</b><br><span class="pill">Părinți</span></div></div>
-<div class="ev"><div class="date">31<small>OCT</small></div><div><b>Balul de Halloween</b><br><span class="pill">Elevi</span></div></div>
-<div class="ev"><div class="date">1<small>DEC</small></div><div><b>Serbarea Zilei Naționale</b><br><span class="pill">Toți</span></div></div>
-<div class="ev"><div class="date">20<small>DEC</small></div><div><b>Târgul de Crăciun al școlii</b><br><span class="pill">Caritate</span></div></div>
+<div class="ev"><div class="date">16<small>NOV</small></div><div><b>Ziua lui Bogdan</b></div></div>
 </section>
 
 <section id="contact">
@@ -137,8 +124,9 @@ footer{text-align:center;padding:30px 20px;color:var(--muted);border-top:2px sol
 <p>Scrie-ne sau treci pe la secretariat.</p>
 <div class="two">
 <div class="card">
-<p>📍 Strada Școlii nr. 1, Alexandria<br>📞 0247 000 000<br>✉️ contact@scoala-eminescu.ro<br>🕗 Secretariat: Luni–Vineri, 08:00–14:00</p>
-<p style="margin-top:14px"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Alexandria+Teleorman+scoala" target="_blank" rel="noopener">Deschide harta 🗺️</a></p>
+<p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%C8%98coala+Gimnazial%C4%83+Fr%C4%83sinet+Teleorman" target="_blank" rel="noopener">Școala Gimnazială Frasinet, comuna Frăsinet, jud. Teleorman</a><br>
+📞 <a href="tel:+40247433563">+40 247 433 563</a><br>
+✉️ <a href="mailto:frasinetscoala@yahoo.com">frasinetscoala@yahoo.com</a></p>
 </div>
 <div class="card">
 <form onsubmit="event.preventDefault();this.innerHTML='<h3>Mulțumim! 🎉</h3><p>Mesajul tău a fost înregistrat.</p>'">
@@ -149,15 +137,14 @@ footer{text-align:center;padding:30px 20px;color:var(--muted);border-top:2px sol
 </div>
 </section>
 
-<footer>© 2026 Școala Gimnazială „Mihai Eminescu” · Făcut cu ❤️ de elevi</footer>
+<footer>© 2026 Școala Gimnazială Frasinet · </footer>
 
 <script>
-const sub={V:["Română","Matematică","Engleză","Istorie","Sport","Muzică"],VI:["Matematică","Română","Biologie","Geografie","Engleză","Info"],VII:["Fizică","Română","Matematică","Engleză","Istorie","Desen"],VIII:["Chimie","Matematică","Română","Fizică","Engleză","Sport"]};
 const days=["Luni","Marți","Miercuri","Joi","Vineri"];
+const ints=["08:00 – 08:50","09:00 – 09:50","10:00 – 10:50","11:00 – 11:50","12:00 – 12:50"];
 function draw(){
- const k=document.getElementById("cls").value.split(" ")[0],s=sub[k];
- let h="<tr><th>Ora</th>"+days.map(d=>"<th>"+d+"</th>").join("")+"</tr>";
- for(let i=0;i<5;i++){h+="<tr><td>"+(i+1)+"</td>"+days.map((d,j)=>"<td>"+s[(i+j)%s.length]+"</td>").join("")+"</tr>"}
+ let h="<tr><th>Interval</th>"+days.map(d=>"<th>"+d+"</th>").join("")+"</tr>";
+ ints.forEach(i=>{h+="<tr><td>"+i+"</td>"+days.map(()=>"<td>în lucru</td>").join("")+"</tr>"});
  document.getElementById("orar").innerHTML=h;
 }
 document.getElementById("cls").onchange=draw;draw();
