@@ -16,7 +16,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var
 .logo{font-weight:900;font-size:1.1rem;margin-right:auto}
 nav{display:flex;gap:4px;overflow-x:auto;max-width:100%}
 nav a{text-decoration:none;padding:6px 12px;border-radius:99px;font-weight:700;font-size:.9rem;white-space:nowrap;color:var(--muted)}
-nav a:hover{background:var(--p);color:#fff}
+nav a.ext{background:var(--y);color:#2a2200}nav a:hover{background:var(--p);color:#fff}
 section{max-width:1050px;margin:auto;padding:56px 20px}
 h2{font-size:2rem;margin:0 0 6px}
 h2+p{color:var(--muted);margin:0 0 24px}
@@ -41,23 +41,35 @@ button.tab.on{background:var(--p);color:#fff;border-color:var(--p)}
 table{width:100%;border-collapse:collapse;background:var(--card);border-radius:16px;overflow:hidden}
 td,th{padding:10px 14px;border-bottom:1px solid var(--line);text-align:left}
 th{background:var(--p);color:#fff}
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.bus{display:flex;align-items:center;gap:14px}.bus .n{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:900;flex:none}.bus .t{margin-left:auto;font-size:1.5rem;font-weight:900}.bus small{color:var(--muted);display:block}.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
 .av{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-size:1.6rem;color:#fff;font-weight:900}
 .ev{display:flex;gap:14px;align-items:center;background:var(--card);border:2px solid var(--line);border-radius:16px;padding:12px 16px;margin-bottom:10px}
 .date{background:var(--a);color:#fff;border-radius:12px;padding:6px 12px;text-align:center;font-weight:900;line-height:1.1;min-width:58px}
 .date small{display:block;font-size:.7rem}
 form input,form textarea{width:100%;font:inherit;padding:10px 14px;margin-bottom:10px;border-radius:14px;border:2px solid var(--line);background:var(--card);color:var(--text)}
+.view[hidden]{display:none}nav a.ext.on{outline:3px solid var(--p)}
+.card h2{font-size:1.3rem;margin:0 0 10px}
+.row{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid var(--line)}.row:last-child{border:0}.row b{white-space:nowrap}
+.inc{color:var(--a);font-weight:700}.vac{margin-top:12px;background:var(--y);color:#2a2200;border-radius:14px;padding:8px 12px;font-weight:700}
+.big{margin-top:18px;background:var(--g);color:#fff;border-radius:20px;padding:18px;text-align:center;font-weight:800;font-size:1.2rem}
+.empty{text-align:center;padding:60px 20px;color:var(--muted)}
+details.card{padding:0}summary{cursor:pointer;font-weight:900;font-size:1.1rem;padding:16px 18px;list-style:none;display:flex;align-items:center;gap:10px}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";margin-left:auto;font-size:1.4rem;color:var(--p)}
+details[open] summary::after{content:"–"}details .ico{font-size:1.5rem}
+.dd{padding:0 18px 8px!important}.doc{display:flex;justify-content:space-between;gap:10px;align-items:center;margin:0 18px;padding:9px 0;border-top:1px solid var(--line)}
+details .doc:last-child{margin-bottom:10px}
 footer{text-align:center;padding:30px 20px;color:var(--muted);border-top:2px solid var(--line)}
 </style>
 </head>
 <body>
 <header>
-<div class="logo">🎒 Școala Gimnazială Frasinet</div>
+<a class="logo" href="#acasa" style="text-decoration:none">🎒 Școala Gimnazială Frasinet</a>
 <nav>
-<a href="#despre">Despre</a><a href="#program">Program</a><a href="#profesori">Profesori</a><a href="#activitati">Activități</a><a href="#evenimente">Evenimente</a><a href="#contact">Contact</a>
+<a href="#despre">Despre</a><a href="#program">Program</a><a href="#microbuz">Microbuz</a><a href="#profesori">Profesori</a><a href="#activitati">Activități</a><a href="#evenimente">Evenimente</a><a href="#contact">Contact</a><a class="ext" href="#anul-scolar">📅 Anul școlar</a><a class="ext" href="#documente">📄 Documente</a><a class="ext" href="#arhiva-foto">📷 Arhivă foto</a>
 </nav>
 </header>
 
+<div class="view" id="v-home">
 <div class="hero">
 <h1>Bine ai venit la Școala Gimnazială Frasinet!</h1>
 <p>Un loc unde fiecare elev învață, descoperă și crește, împreună cu colegi și profesori care îl susțin.</p>
@@ -87,6 +99,17 @@ footer{text-align:center;padding:30px 20px;color:var(--muted);border-top:2px sol
 <option>Clasa a V-a</option><option>Clasa a VI-a</option><option>Clasa a VII-a</option><option>Clasa a VIII-a</option>
 </select></div>
 <div class="wrap"><table id="orar"></table></div>
+</section>
+
+<section id="microbuz">
+<h2>🚌 Programul microbuzului școlar</h2>
+<p>Cele patru curse de dimineață.</p>
+<div class="grid">
+<div class="card bus"><div class="n" style="background:#1e88e5">1</div><div><b>Clanița</b><small>Prima cursă: gimnaziu</small></div><div class="t">7:00</div></div>
+<div class="card bus"><div class="n" style="background:var(--g)">2</div><div><b>Clanița</b><small>A doua cursă: clasele primare</small></div><div class="t">7:25</div></div>
+<div class="card bus"><div class="n" style="background:#e08a00">3</div><div><b>Frasinet</b><small>A treia cursă: clasele primare + gimnaziu</small></div><div class="t">7:45</div></div>
+<div class="card bus"><div class="n" style="background:var(--a)">4</div><div><b>Frasinet + Clanița</b><small>A patra cursă: grădiniță</small></div><div class="t">8:15</div></div>
+</div>
 </section>
 
 <section id="profesori">
@@ -137,6 +160,38 @@ footer{text-align:center;padding:30px 20px;color:var(--muted);border-top:2px sol
 </div>
 </section>
 
+</div>
+<div class="view" id="v-anul" hidden>
+<div class="hero" style="padding:40px 20px"><h1>Structura anului școlar 2026–2027</h1><p style="margin:0">Cele 36 de săptămâni de curs</p></div>
+<section><div class="grid">
+<div class="card" style="border-top:8px solid #5b4bff"><h2>Modulul 1</h2><div class="row"><b>S1</b><span>7–11 septembrie</span></div><div class="row"><b>S2</b><span>14–18 septembrie</span></div><div class="row"><b>S3</b><span>21–25 septembrie</span></div><div class="row"><b>S4</b><span>28 septembrie – 2 octombrie</span></div><div class="row"><b>S5</b><span>5–9 octombrie</span></div><div class="row"><b>S6</b><span>12–16 octombrie</span></div><div class="row"><b>S7</b><span>19–23 octombrie</span></div><div class="vac">🌴 Vacanță: 24 octombrie – 1 noiembrie 2026</div></div>
+<div class="card" style="border-top:8px solid #22c39b"><h2>Modulul 2</h2><div class="row"><b>S8</b><span>2–6 noiembrie</span></div><div class="row"><b>S9</b><span>9–13 noiembrie</span></div><div class="row"><b>S10</b><span>16–20 noiembrie</span></div><div class="row"><b>S11</b><span>23–27 noiembrie</span></div><div class="row"><b>S12</b><span>30 noiembrie – 4 decembrie</span></div><div class="row"><b>S13</b><span>7–11 decembrie</span></div><div class="row"><b>S14</b><span>14–18 decembrie</span></div><div class="row"><b class="inc">S15*</b><span>21–22 decembrie</span></div><div class="vac">🌴 Vacanța de iarnă: 23 decembrie 2026 – 10 ianuarie 2027</div></div>
+<div class="card" style="border-top:8px solid #ff6b6b"><h2>Modulul 3</h2><div class="row"><b>S16</b><span>11–15 ianuarie</span></div><div class="row"><b>S17</b><span>18–22 ianuarie</span></div><div class="row"><b>S18</b><span>25–29 ianuarie</span></div><div class="row"><b>S19</b><span>1–5 februarie</span></div><div class="row"><b>S20</b><span>8–12 februarie</span></div><div class="row"><b>S21</b><span>15–19 februarie</span></div><div class="vac">🌴 Vacanță: 22–28 februarie 2027</div></div>
+<div class="card" style="border-top:8px solid #8f5bff"><h2>Modulul 4</h2><div class="row"><b>S22</b><span>1–5 martie</span></div><div class="row"><b>S23</b><span>8–12 martie</span></div><div class="row"><b>S24</b><span>15–19 martie</span></div><div class="row"><b>S25</b><span>22–26 martie</span></div><div class="row"><b>S26</b><span>29 martie – 2 aprilie</span></div><div class="row"><b>S27</b><span>5–9 aprilie</span></div><div class="row"><b>S28</b><span>12–16 aprilie</span></div><div class="row"><b>S29</b><span>19–23 aprilie</span></div><div class="vac">🌴 Vacanță: 24 aprilie – 4 mai 2027</div></div>
+<div class="card" style="border-top:8px solid #e08a00"><h2>Modulul 5</h2><div class="row"><b class="inc">S30*</b><span>5–7 mai</span></div><div class="row"><b>S31</b><span>10–14 mai</span></div><div class="row"><b>S32</b><span>17–21 mai</span></div><div class="row"><b>S33</b><span>24–28 mai</span></div><div class="row"><b>S34</b><span>31 mai – 4 iunie</span></div><div class="row"><b>S35</b><span>7–11 iunie</span></div><div class="row"><b>S36</b><span>14–18 iunie</span></div><div class="vac">🌴 Vacanța de vară: din 19 iunie 2027</div></div>
+</div>
+<div class="card" style="margin-top:18px"><h2>📅 Zile fără cursuri</h2><p style="margin:0">5 octombrie 2026 · 30 noiembrie 2026 · 1 decembrie 2026 · 1 iunie 2027</p><p class="inc" style="margin:10px 0 0">* săptămâni de curs incomplete</p></div>
+<div class="big">☀️ Vacanța de vară începe pe 19 iunie 2027</div></section>
+</div>
+<div class="view" id="v-doc" hidden>
+<div class="hero" style="padding:40px 20px"><h1>Documente de interes public</h1><p style="margin:0">Adăugăm documentele pe măsură ce sunt gata.</p></div>
+<section><div class="grid" style="align-items:start">
+<details class="card"><summary><span class="ico">🎓</span> Burse</summary><p class="dd">Burse de merit, de studiu, de performanță și sociale. Elevii pot depune dosarul la secretariat în perioada anunțată în școală.</p><div class="doc"><span>📄 Regulament de acordare a burselor</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Cerere tip pentru bursă</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Calendarul depunerii dosarelor</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Liste cu elevii bursieri</span><span class="pill">în curând</span></div></details>
+<details class="card"><summary><span class="ico">📝</span> Înscriere</summary><p class="dd">Informații pentru înscrierea la grădiniță, la clasa pregătitoare și la clasa a V-a. Perioadele de înscriere se stabilesc în fiecare an și le anunțăm aici.</p><div class="doc"><span>📄 Cerere de înscriere</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Lista actelor necesare</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Calendarul înscrierilor</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Număr de locuri disponibile</span><span class="pill">în curând</span></div></details>
+<details class="card"><summary><span class="ico">📜</span> Regulamente</summary><p class="dd">Regulile care ne ajută să învățăm și să ne purtăm frumos unii cu alții.</p><div class="doc"><span>📄 Regulamentul de ordine interioară</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Regulamentul de organizare și funcționare</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Codul de conduită</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Regulamentul microbuzului școlar</span><span class="pill">în curând</span></div></details>
+<details class="card"><summary><span class="ico">🏛️</span> Conducere și administrare</summary><p class="dd">Cum este condusă școala și cine ia deciziile.</p><div class="doc"><span>📄 Organigrama școlii</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Hotărâri ale Consiliului de administrație</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Raport anual de activitate</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Program de audiențe</span><span class="pill">în curând</span></div></details>
+<details class="card"><summary><span class="ico">🗂️</span> Secretariat</summary><p class="dd">Cereri și adeverințe pe care le poți solicita de la secretariat.</p><div class="doc"><span>📄 Cerere pentru adeverință de elev</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Cerere de transfer</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Cerere de motivare a absențelor</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Program de lucru cu publicul</span><span class="pill">în curând</span></div></details>
+<details class="card"><summary><span class="ico">🍎</span> Programe pentru elevi</summary><p class="dd">Sprijin pentru elevi și familii: rechizite, alimente, activități după ore.</p><div class="doc"><span>📄 Programe sociale și sprijin pentru elevi</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Informații despre masă și gustări</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Program „Școala după școală”</span><span class="pill">în curând</span></div></details>
+<details class="card"><summary><span class="ico">🛡️</span> Siguranță și sănătate</summary><p class="dd">Pentru ca fiecare copil să se simtă în siguranță la școală.</p><div class="doc"><span>📄 Plan de evacuare</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Prevenirea violenței și a bullying-ului</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Informații de la cabinetul medical</span><span class="pill">în curând</span></div></details>
+<details class="card"><summary><span class="ico">🔒</span> Protecția datelor (GDPR)</summary><p class="dd">Cum sunt folosite datele personale ale elevilor și ale părinților.</p><div class="doc"><span>📄 Politica de confidențialitate</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Acord pentru fotografii și imagini</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Date de contact ale responsabilului cu protecția datelor</span><span class="pill">în curând</span></div></details>
+<details class="card"><summary><span class="ico">ℹ️</span> Informații de interes public</summary><p class="dd">Conform Legii nr. 544/2001, orice persoană poate cere informații de interes public de la școală.</p><div class="doc"><span>📄 Cerere pentru informații publice</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Persoana responsabilă cu informarea publicului</span><span class="pill">în curând</span></div><div class="doc"><span>📄 Buget și achiziții</span><span class="pill">în curând</span></div></details>
+</div>
+<div class="card" style="margin-top:18px"><h3 style="margin:0 0 6px">Ai nevoie de un document care nu e aici?</h3><p>Scrie-ne la <a href="mailto:frasinetscoala@yahoo.com">frasinetscoala@yahoo.com</a> sau sună la <a href="tel:+40247433563">+40 247 433 563</a>.</p></div></section>
+</div>
+<div class="view" id="v-arhiva" hidden>
+<div class="hero" style="padding:40px 20px"><h1>Arhivă foto</h1><p style="margin:0">Amintiri din viața școlii noastre</p></div>
+<section><div class="card empty"><div style="font-size:3rem">📷</div><p>Arhiva este goală deocamdată. Fotografiile vor apărea aici în curând.</p></div></section>
+</div>
 <footer>© 2026 Școala Gimnazială Frasinet · </footer>
 
 <script>
@@ -148,6 +203,16 @@ function draw(){
  document.getElementById("orar").innerHTML=h;
 }
 document.getElementById("cls").onchange=draw;draw();
+
+function route(){
+ const h=location.hash.slice(1);
+ const v=h==='anul-scolar'?'anul':h==='documente'?'doc':h==='arhiva-foto'?'arhiva':'home';
+ document.querySelectorAll('.view').forEach(e=>e.hidden=e.id!=='v-'+v);
+ document.querySelectorAll('nav a.ext').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+h));
+ const el=(v==='home'&&h&&h!=='acasa')?document.getElementById(h):null;
+ if(el)el.scrollIntoView();else window.scrollTo(0,0);
+}
+addEventListener('hashchange',route);route();
 </script>
 </body>
 </html>
